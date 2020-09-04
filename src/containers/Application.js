@@ -1,4 +1,5 @@
 import * as SRD from '@projectstorm/react-diagrams';
+import { JSCustomNodeFactory } from '../components/CustomNode/JSCustomNodeFactory';
 
 /**
  * @author Dylan Vorster
@@ -7,13 +8,13 @@ export class Application {
 
 	constructor() {
 		this.diagramEngine = SRD.default();
+		this.diagramEngine.getNodeFactories().registerFactory(new JSCustomNodeFactory());
 		this.newModel();
 	}
 
 	newModel() {
 		this.activeModel = new SRD.DiagramModel();
-		this.diagramEngine.setModel(this.activeModel);
-
+		this.diagramEngine.setModel(this.activeModel);		
 		//3-A) create a default node
 		var node1 = new SRD.DefaultNodeModel('Node 1', 'rgb(0,192,255)');
 		let port = node1.addOutPort('Out');

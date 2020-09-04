@@ -1,11 +1,12 @@
 import * as React from 'react';
 import * as _ from 'lodash';
 import TrayWidget from './TrayWidget';
-import { Application } from '../Application';
+import { Application } from '../containers/Application';
 import TrayItemWidget from './TrayItemWidget';
 import { DefaultNodeModel } from '@projectstorm/react-diagrams';
 import { CanvasWidget } from '@projectstorm/react-canvas-core';
 import { DemoCanvasWidget } from '../helpers/DemoCanvasWidget';
+import { JSCustomNodeModel } from '../components/CustomNode/JSCustomNodeModel';
 import styled from '@emotion/styled';
  
 export const Body = styled.div`
@@ -48,6 +49,7 @@ class BodyWidget extends React.Component {
 					<TrayWidget>
 						<TrayItemWidget model={{ type: 'in' }} name="In Node" color="rgb(192,255,0)" />
 						<TrayItemWidget model={{ type: 'out' }} name="Out Node" color="rgb(0,192,255)" />
+						<TrayItemWidget model={{ type: 'in-out' }} name="Connection Node" color="rgb(0,192,255)" />
 					</TrayWidget>
 					<Layer
 						onDrop={(event) => {
@@ -56,11 +58,15 @@ class BodyWidget extends React.Component {
 
 							var node = null;
 							if (data.type === 'in') {
-								node = new DefaultNodeModel('Node ' + (nodesCount + 1), 'rgb(192,255,0)');
+								node = new DefaultNodeModel('Server ' + (nodesCount + 1), 'rgb(192,255,0)');
 								node.addInPort('In');
-							} else {
-								node = new DefaultNodeModel('Node ' + (nodesCount + 1), 'rgb(0,192,255)');
+							} else if (data.type === 'out') {
+								node = new DefaultNodeModel('Server ' + (nodesCount + 1), 'rgb(0,192,255)');
 								node.addOutPort('Out');
+							} else {
+								node = new JSCustomNodeModel({name: 'Server ' + (nodesCount + 1),color: 'rgb(0,192,255)'});
+								node.addInPort('in port');
+								node.addOutPort('out port');
 							}
 							var point = this.props.app.getDiagramEngine().getRelativeMousePoint(event);
 							node.setPosition(point);
