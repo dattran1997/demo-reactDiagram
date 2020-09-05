@@ -65,8 +65,8 @@ class BodyWidget extends React.Component {
 								node.addOutPort('Out');
 							} else {
 								node = new JSCustomNodeModel({name: 'Server ' + (nodesCount + 1),color: 'rgb(0,192,255)'});
-								node.addInPort('in port');
-								node.addOutPort('out port');
+								node.addInPort('in');
+								node.addOutPort('out');
 							}
 							var point = this.props.app.getDiagramEngine().getRelativeMousePoint(event);
 							node.setPosition(point);

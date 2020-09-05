@@ -1,4 +1,5 @@
 import { DefaultPortModel, NodeModel } from '@projectstorm/react-diagrams';
+import RDC from '@projectstorm/react-diagrams-core';
 
 
 export class JSCustomNodeModel extends NodeModel {
@@ -11,19 +12,19 @@ export class JSCustomNodeModel extends NodeModel {
     this.name = options.name || 'DF Server';
 
 
-    this.addPort(
-      new DefaultPortModel({
-        in: true,
-        name: 'in',
-      })
-    );
+    // this.addPort(
+    //   new DefaultPortModel({
+    //     in: true,
+    //     name: 'in',
+    //   })
+    // );
 
-    this.addPort(
-      new DefaultPortModel({
-        in: false,
-        name: 'out',
-      })
-    );
+    // this.addPort(
+    //   new DefaultPortModel({
+    //     in: false,
+    //     name: 'out',
+    //   })
+    // );
   }
 
 
@@ -33,7 +34,7 @@ export class JSCustomNodeModel extends NodeModel {
       new DefaultPortModel({
         in: true,
         name: 'in',
-        label: label
+        label: label,
       })
     );
   }
@@ -43,7 +44,7 @@ export class JSCustomNodeModel extends NodeModel {
       new DefaultPortModel({
         in: false,
         name: 'out',
-        label: label
+        label: label,
       })
     );
   }
