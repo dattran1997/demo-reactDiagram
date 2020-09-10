@@ -7,6 +7,7 @@ import { DefaultNodeModel } from '@projectstorm/react-diagrams';
 import { CanvasWidget } from '@projectstorm/react-canvas-core';
 import { DemoCanvasWidget } from '../helpers/DemoCanvasWidget';
 import { JSCustomNodeModel } from '../components/CustomNode/JSCustomNodeModel';
+import {NodeDataModel} from './NodeDataModel';
 import styled from '@emotion/styled';
  
 export const Body = styled.div`
@@ -39,6 +40,31 @@ export const Layer = styled.div`
 
 
 class BodyWidget extends React.Component {
+	state={
+		seviceFormData: {},
+		serviceFromState: false
+	}
+
+	changeServiceData = (serviceData) => {
+		this.setState({
+			seviceFormData: serviceData,
+		});
+
+		console.log(this.state.seviceFormData);
+	}
+
+	handleFormOpen = () => {
+		this.setState({
+			serviceFromState: true
+		});
+	}
+
+	handleFormClose = () => {
+		this.setState({
+			serviceFromState: false
+		});
+	}
+
 	render() {
 		return (
 			<Body>
@@ -56,6 +82,8 @@ class BodyWidget extends React.Component {
 							var data = JSON.parse(event.dataTransfer.getData('storm-diagram-node'));
 							var nodesCount = _.keys(this.props.app.getDiagramEngine().getModel().getNodes()).length;
 
+							this.handleFormOpen()
+
 							var node = null;
 							if (data.type === 'in') {
 								node = new DefaultNodeModel('Server ' + (nodesCount + 1), 'rgb(192,255,0)');
@@ -64,13 +92,16 @@ class BodyWidget extends React.Component {
 								node = new DefaultNodeModel('Server ' + (nodesCount + 1), 'rgb(0,192,255)');
 								node.addOutPort('Out');
 							} else {
-								node = new JSCustomNodeModel({name: 'Server ' + (nodesCount + 1),color: 'rgb(0,192,255)'});
+								node = new JSCustomNodeModel({name:'Server ' + (nodesCount + 1),color: 'rgb(0,192,255)'});
 								node.addInPort('in');
 								node.addOutPort('out');
 							}
 							var point = this.props.app.getDiagramEngine().getRelativeMousePoint(event);
 							node.setPosition(point);
 							this.props.app.getDiagramEngine().getModel().addNode(node);
+							let diagramData = this.props.app.getActiveDiagram().serialize(); 
+							// console.log(JSON.stringify(diagramData));
+							// console.log(diagramData);
 							this.forceUpdate();
 						}}
 						onDragOver={(event) => {
@@ -79,6 +110,12 @@ class BodyWidget extends React.Component {
 						<DemoCanvasWidget>
 							<CanvasWidget engine={this.props.app.getDiagramEngine()} />
 						</DemoCanvasWidget>
+						<NodeDataModel 
+							visible={this.state.serviceFromState} 
+							changeServiceData={this.changeServiceData}
+							handleFormOpen={this.handleFormOpen}
+							handleFormClose={this.handleFormClose}
+						/>
 					</Layer>
 				</Content>
 			</Body>

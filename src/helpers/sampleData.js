@@ -1,0 +1,180 @@
+export const data = {"id":"80478e70-154d-4dd5-8c0c-3b437564dae7","offsetX":0,"offsetY":0,"zoom":100,"gridSize":0,"layers":[{"id":"4a7a7b76-db9e-499c-b28b-d4801510392b","type":"diagram-links","isSvg":true,"transformed":true,"models":{"7f919aa8-fbd5-49de-a16b-d8dc699bb7b6":{"id":"7f919aa8-fbd5-49de-a16b-d8dc699bb7b6","type":"default","source":"82c26956-d81e-4524-afe7-9a3b2e4b1187","sourcePort":"7b64bf7b-49c9-4b59-800d-e0949316a2b5","target":"fe4afcff-9faa-4b82-a017-975c706d7d8f","targetPort":"b0f5342e-af59-44db-a68e-b384ffb0a90d","points":[{"id":"61039143-a9d7-471c-9c75-8cba2c90ee88","type":"point","x":147.234375,"y":133.5},{"id":"7f56e8ed-3ff1-499d-9cc4-143c8ab2ca55","type":"point","x":409.5,"y":133.5}],"labels":[],"width":3,"color":"gray","curvyness":50,"selectedColor":"rgb(0,192,255)"}}},{"id":"5c97c6de-e152-4b68-b275-abc629647aa7","type":"diagram-nodes","isSvg":false,"transformed":true,"models":{"82c26956-d81e-4524-afe7-9a3b2e4b1187":{"id":"82c26956-d81e-4524-afe7-9a3b2e4b1187","type":"default","x":100,"y":100,"ports":[{"id":"7b64bf7b-49c9-4b59-800d-e0949316a2b5","type":"default","x":139.734375,"y":126,"name":"Out","alignment":"right","parentNode":"82c26956-d81e-4524-afe7-9a3b2e4b1187","links":["7f919aa8-fbd5-49de-a16b-d8dc699bb7b6"],"in":false,"label":"Out"}],"name":"Node 1","color":"rgb(0,192,255)","portsInOrder":[],"portsOutOrder":["7b64bf7b-49c9-4b59-800d-e0949316a2b5"]},"fe4afcff-9faa-4b82-a017-975c706d7d8f":{"id":"fe4afcff-9faa-4b82-a017-975c706d7d8f","type":"default","x":400,"y":100,"ports":[{"id":"b0f5342e-af59-44db-a68e-b384ffb0a90d","type":"default","x":402,"y":126,"name":"In","alignment":"left","parentNode":"fe4afcff-9faa-4b82-a017-975c706d7d8f","links":["7f919aa8-fbd5-49de-a16b-d8dc699bb7b6"],"in":true,"label":"In"}],"name":"Node 2","color":"rgb(192,255,0)","portsInOrder":["b0f5342e-af59-44db-a68e-b384ffb0a90d"],"portsOutOrder":[]},"6334446d-df4c-4e12-af54-8e1e8f787682":{"id":"6334446d-df4c-4e12-af54-8e1e8f787682","type":"js-custom-node","x":399,"y":395,"ports":[{"id":"cf534828-e0d9-4d3f-bf82-1df52be12924","type":"default","x":null,"y":null,"name":"in","alignment":"left","parentNode":"6334446d-df4c-4e12-af54-8e1e8f787682","links":[],"in":true,"label":"in"},{"id":"d7d1ff65-3d66-4597-a6fe-11a85c7fc3ad","type":"default","x":null,"y":null,"name":"out","alignment":"right","parentNode":"6334446d-df4c-4e12-af54-8e1e8f787682","links":[],"in":false,"label":"out"}],"color":"rgb(0,192,255)"}}}]};
+
+export const parsedData = {
+   "id":"9351afbd-ebfc-4e82-8179-6851050f2bff",
+   "offsetX":0,
+   "offsetY":0,
+   "zoom":100,
+   "gridSize":0,
+   "layers":[
+      {
+         "id":"85be0142-92ec-4d19-9373-d72524f9765d",
+         "type":"diagram-links",
+         "isSvg":true,
+         "transformed":true,
+         "models":{
+            
+         }
+      },
+      {
+         "id":"8253edfd-7b98-443d-997a-3493d3fb141b",
+         "type":"diagram-nodes",
+         "isSvg":false,
+         "transformed":true,
+         "models":{
+            "cf1edd7e-ae40-465a-a25c-8c5928f11b49":{
+               "id":"cf1edd7e-ae40-465a-a25c-8c5928f11b49",
+               "type":"js-custom-node",
+               "x":285,
+               "y":146,
+               "ports":[
+                  {
+                     "id":"1ba417b5-6e1f-409f-9194-ff97d35a7517",
+                     "type":"default",
+                     "x":287,
+                     "y":267,
+                     "name":"in",
+                     "alignment":"left",
+                     "parentNode":"cf1edd7e-ae40-465a-a25c-8c5928f11b49",
+                     "links":[
+                        
+                     ],
+                     "in":true,
+                     "label":"in"
+                  },
+                  {
+                     "id":"26d0fbc3-d127-41cb-b5ce-f6d35e06a1ab",
+                     "type":"default",
+                     "x":424.875,
+                     "y":267,
+                     "name":"out",
+                     "alignment":"right",
+                     "parentNode":"cf1edd7e-ae40-465a-a25c-8c5928f11b49",
+                     "links":[
+                        
+                     ],
+                     "in":false,
+                     "label":"out"
+                  }
+               ],
+               "color":"rgb(0,192,255)",
+               "name":"Server 1"
+            },
+            "b4afccbc-e8ad-4e18-9e98-b982acd7f82e":{
+               "id":"b4afccbc-e8ad-4e18-9e98-b982acd7f82e",
+               "type":"js-custom-node",
+               "x":612,
+               "y":304,
+               "ports":[
+                  {
+                     "id":"0e6b752c-71c9-4df2-bec4-fb34dd89df0d",
+                     "type":"default",
+                     "x":614,
+                     "y":425,
+                     "name":"in",
+                     "alignment":"left",
+                     "parentNode":"b4afccbc-e8ad-4e18-9e98-b982acd7f82e",
+                     "links":[
+                        
+                     ],
+                     "in":true,
+                     "label":"in"
+                  },
+                  {
+                     "id":"262adacd-11be-49dd-b298-faae81f72ced",
+                     "type":"default",
+                     "x":751.875,
+                     "y":425,
+                     "name":"out",
+                     "alignment":"right",
+                     "parentNode":"b4afccbc-e8ad-4e18-9e98-b982acd7f82e",
+                     "links":[
+                        
+                     ],
+                     "in":false,
+                     "label":"out"
+                  }
+               ],
+               "color":"rgb(0,192,255)",
+               "name":"Server 2"
+            },
+            "fc762261-1205-44d5-8439-3822429dc8ae":{
+               "id":"fc762261-1205-44d5-8439-3822429dc8ae",
+               "type":"js-custom-node",
+               "x":352,
+               "y":434,
+               "ports":[
+                  {
+                     "id":"c397396f-60bf-4383-9b67-3217124ebcd6",
+                     "type":"default",
+                     "x":354,
+                     "y":555,
+                     "name":"in",
+                     "alignment":"left",
+                     "parentNode":"fc762261-1205-44d5-8439-3822429dc8ae",
+                     "links":[
+                        
+                     ],
+                     "in":true,
+                     "label":"in"
+                  },
+                  {
+                     "id":"e5d6d268-8dc7-420e-862c-6e31679a5495",
+                     "type":"default",
+                     "x":491.875,
+                     "y":555,
+                     "name":"out",
+                     "alignment":"right",
+                     "parentNode":"fc762261-1205-44d5-8439-3822429dc8ae",
+                     "links":[
+                        
+                     ],
+                     "in":false,
+                     "label":"out"
+                  }
+               ],
+               "color":"rgb(0,192,255)",
+               "name":"Server 3"
+            },
+            "b9ab2938-9a02-43c3-8069-5be68556039f":{
+               "id":"b9ab2938-9a02-43c3-8069-5be68556039f",
+               "type":"js-custom-node",
+               "x":748,
+               "y":547,
+               "ports":[
+                  {
+                     "id":"cdad666e-a56f-4171-b5c6-78e6de787c30",
+                     "type":"default",
+                     "x":null,
+                     "y":null,
+                     "name":"in",
+                     "alignment":"left",
+                     "parentNode":"b9ab2938-9a02-43c3-8069-5be68556039f",
+                     "links":[
+                        
+                     ],
+                     "in":true,
+                     "label":"in"
+                  },
+                  {
+                     "id":"779de9f4-0e2f-4b52-ae51-478c97069903",
+                     "type":"default",
+                     "x":null,
+                     "y":null,
+                     "name":"out",
+                     "alignment":"right",
+                     "parentNode":"b9ab2938-9a02-43c3-8069-5be68556039f",
+                     "links":[
+                        
+                     ],
+                     "in":false,
+                     "label":"out"
+                  }
+               ],
+               "color":"rgb(0,192,255)",
+               "name":"Server 4"
+            }
+         }
+      }
+   ]
+}
