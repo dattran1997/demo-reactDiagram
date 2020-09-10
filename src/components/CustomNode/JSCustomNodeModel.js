@@ -11,7 +11,7 @@ export class JSCustomNodeModel extends NodeModel {
     });
     this.color = options.color || 'rgb(0,192,255)';
     this.name = options.name || 'DF Server';
-    this.seviceFormData = options.seviceFormData || {name: 'default name', uri: 'df uri'};
+    this.serviceFormData = options.serviceFormData || {name: 'default name', uri: 'df uri'};
 
 
     this.addPort(
@@ -30,7 +30,7 @@ export class JSCustomNodeModel extends NodeModel {
   }
 
   // constructor(options = {}) {
-  //   console.log('option: ', options);
+  //   // console.log('option: ', options);
   
   //   super({
   //     ...options, 
@@ -39,37 +39,37 @@ export class JSCustomNodeModel extends NodeModel {
 
   //   this.color = options.color || 'rgb(0,192,255)';
   //   this.name = options.name || 'DF Diagram';
-  //   this.seviceFormData = {name: 'abc', uri: '12.12.12.12', protocolType: 'asdasd', linkDoc: 'asdasd.com'};
+  //   this.serviceFormData = options.serviceFormData || { name: 'default name', uri: 'df uri' };
   // }
 
 
 
-  addInPort(label) {
-    this.addPort(
-      new DefaultPortModel({
-        in: true,
-        name: 'in',
-        label: label,
-      })
-    );
-  }
+  // addInPort(label) {
+  //   this.addPort(
+  //     new DefaultPortModel({
+  //       in: true,
+  //       name: 'in',
+  //       label: label,
+  //     })
+  //   );
+  // }
 
-  addOutPort(label) {
-    this.addPort(
-      new DefaultPortModel({
-        in: false,
-        name: 'out',
-        label: label,
-      })
-    );
-  }
+  // addOutPort(label) {
+  //   this.addPort(
+  //     new DefaultPortModel({
+  //       in: false,
+  //       name: 'out',
+  //       label: label,
+  //     })
+  //   );
+  // }
 
   serialize() {
 		return {
 			...super.serialize(),
       color: this.color,
       name: this.name,
-      // seviceFormData: this.seviceFormData,
+      // serviceFormData: this.serviceFormData,
 		};
 	}
 
@@ -78,7 +78,7 @@ export class JSCustomNodeModel extends NodeModel {
 		super.deserialize(ob, engine);
     this.options.color = ob.data.color;
     this.options.name = ob.data.name;
-    // this.options.seviceFormData = ob.data.seviceFormData
+    // this.options.serviceFormData = ob.data.serviceFormData;
 	}
 
 }

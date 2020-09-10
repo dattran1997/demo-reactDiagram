@@ -7,13 +7,12 @@ import {JSCustomNodeModel } from '../components/CustomNode/JSCustomNodeModel';
  * @author Dylan Vorster
  */
 export class Application {
-
-
+  
 	constructor() {
 		this.diagramEngine = SRD.default();
 		this.diagramEngine.getNodeFactories().registerFactory(new JSCustomNodeFactory());
 		this.newModel();
-		// this.newSerializeModel();
+    // this.newSerializeModel();
 	}
 
 	newModel() {
