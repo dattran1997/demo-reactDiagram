@@ -66,6 +66,7 @@ class BodyWidget extends React.Component {
 	}
 
 	render() {
+
 		return (
 			<Body>
 				<Header>
@@ -81,6 +82,8 @@ class BodyWidget extends React.Component {
 						onDrop={(event) => {
 							var data = JSON.parse(event.dataTransfer.getData('storm-diagram-node'));
 							var nodesCount = _.keys(this.props.app.getDiagramEngine().getModel().getNodes()).length;
+
+							console.log('all node: ', this.props.app.getDiagramEngine().getModel().getNodes()[0]);
 
 							this.handleFormOpen()
 
